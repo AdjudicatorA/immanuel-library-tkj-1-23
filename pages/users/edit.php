@@ -21,19 +21,11 @@
   ?>
 
     <main class="app-main">
-    <header class="app-topbar">
-      <div class="page-title">
-        <h1>Edit Pengguna</h1>
-        <p>Perbarui data dan role pengguna</p>
-      </div>
-      <div class="topbar-user">
-        <span class="avatar">BS</span>
-        <div>
-          Budi Santoso<br>
-          <span class="badge badge-member" style="margin-top:2px;">Member</span>
-        </div>
-      </div>
-    </header>
+    <?php
+    $pageTitle = 'Edit Pengguna';
+    $pageSubtitle = 'Perbarui data akun pengguna.';
+    require_once __DIR__ . '/../../components/admin/topbar.php';
+    ?>
 
       <div class="app-content">
         <form method="" action="">

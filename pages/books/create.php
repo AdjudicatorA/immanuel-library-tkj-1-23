@@ -17,19 +17,11 @@
   require_once __DIR__ . '/../../components/admin/sidebar.php'; 
   ?>
     <main class="app-main">
-    <header class="app-topbar">
-      <div class="page-title">
-        <h1>Tambah Buku</h1>
-        <p>Lengkapi data buku, kategori, dan penulis</p>
-      </div>
-      <div class="topbar-user">
-        <span class="avatar">BS</span>
-        <div>
-          Budi Santoso<br>
-          <span class="badge badge-member" style="margin-top:2px;">Member</span>
-        </div>
-      </div>
-    </header>
+    <?php
+      $pageTitle = 'Tambah Buku';
+      $pageSubtitle = 'Isi data buku baru untuk ditambahkan ke koleksi.';
+      require_once __DIR__ . '/../../components/admin/topbar.php';
+      ?>
 
       <div class="app-content">
         <form method="" action="">

@@ -16,19 +16,11 @@
   ?>
 
     <main class="app-main">
-    <header class="app-topbar">
-      <div class="page-title">
-        <h1>Manajemen Pengguna</h1>
-        <p>Daftar seluruh pengguna beserta perannya (role)</p>
-      </div>
-      <div class="topbar-user">
-        <span class="avatar">BS</span>
-        <div>
-          Budi Santoso<br>
-          <span class="badge badge-member" style="margin-top:2px;">Member</span>
-        </div>
-      </div>
-    </header>
+    <?php
+    $pageTitle = 'Manajemen Pengguna';
+    $pageSubtitle = 'Kelola akun admin dan anggota perpustakaan.';
+    require_once __DIR__ . '/../../components/admin/topbar.php';
+    ?>
 
       <div class="app-content">
         <div class="toolbar">

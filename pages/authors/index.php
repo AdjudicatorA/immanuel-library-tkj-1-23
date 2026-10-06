@@ -16,19 +16,11 @@
   ?>
 
     <main class="app-main">
-    <header class="app-topbar">
-      <div class="page-title">
-        <h1>Manajemen Penulis</h1>
-        <p>Kelola data penulis yang terdaftar di sistem</p>
-      </div>
-      <div class="topbar-user">
-        <span class="avatar">BS</span>
-        <div>
-          Budi Santoso<br>
-          <span class="badge badge-member" style="margin-top:2px;">Member</span>
-        </div>
-      </div>
-    </header>
+    <?php
+    $pageTitle = 'Manajemen Penulis';
+    $pageSubtitle = 'Kelola data penulis buku.';
+    require_once __DIR__ . '/../../components/admin/topbar.php';
+    ?>
 
       <div class="app-content">
         <div class="toolbar">
