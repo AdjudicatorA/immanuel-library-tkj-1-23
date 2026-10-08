@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="../../styles/authors/index.css">
 </head>
 <body>
-  <?php
-  $author = ["id" => 1, "name" => "Andrea Hirata", "total_books" => 1];
+  <?php 
+  require_once __DIR__ . '/../../repositories/author-repository.php';
+  $authors = getAuthors();
   ?>
   <div class="app-shell">
   <?php 
@@ -44,21 +45,18 @@
               </tr>
             </thead>
             <tbody>
+              <?php foreach ($authors as $author): ?>
               <tr>
-                <td>
-                  <div class="cell-primary">
-                    <span class="cell-thumb"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-                    <?= $author['name'] ?>
-                  </div>
-                </td>
-                <td><span class="badge badge-muted"><?= $author['total_books'] ?> buku</span></td>
+                <td><?= $author['name'] ?></td>
+                <td><?= $author['total_books'] ?></td>
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus author ini?')">Hapus</a>
                   </div>
                 </td>
               </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
