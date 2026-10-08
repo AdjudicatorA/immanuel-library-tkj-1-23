@@ -9,10 +9,12 @@
 <body>
   <?php
   require_once __DIR__ . '/../../repositories/book-repository.php';
-  $book = getBook();
+  require_once __DIR__ . '/../../repositories/category-repository.php';
+  require_once __DIR__ . '/../../repositories/author-repository.php';
 
-  $categories = ["Fiksi", "Sains", "Sejarah", "Teknologi"];
-  $authors = ["Andrea Hirata", "Tere Liye", "J.K. Rowling", "Pramoedya Ananta Toer", "Sapardi Djoko Damono"];
+  $book = getBook();
+  $categories = getCategories();
+  $authors = getAuthors();
   ?>
   <div class="app-shell">
   <?php 
@@ -53,7 +55,7 @@
                 <label for="category_id">Kategori</label>
                 <select id="category_id" name="category_id">
                   <?php foreach ($categories as $index => $category): ?>
-                    <option value="<?= $index + 1 ?>" <?= ($index + 1) === $book['category_id'] ? 'selected' : '' ?>><?= $category ?></option>
+                    <option value="<?= $category['id'] ?>" <?= $category['id'] === $book['category_id'] ? 'selected' : '' ?>><?= $category['name'] ?></option>
                   <?php endforeach; ?>
                 </select>
               </div>
@@ -70,10 +72,9 @@
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
                 <?php foreach ($authors as $index => $authorName): ?>
-                  <?php $authorId = $index + 1; ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $authorId ?>" <?= in_array($authorId, $book['author_ids']) ? 'checked' : '' ?>>
-                    <?= $authorName ?>
+                    <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>
+                    <?= $author['name'] ?>
                   </label>
                 <?php endforeach; ?>
               </div>
