@@ -46,19 +46,20 @@
               </tr>
             </thead>
             <tbody>
+              <tbody>
               <?php foreach ($categories as $category): ?>
-              <tr>
-                <td><?= $category['name'] ?></td>
-                <td><?= $category['description'] ?></td>
+                <tr>
+                  <td><?= $category['name'] ?></td>
+                  <td><?= $category['description'] ?></td>
+                  <td><?= $category['total_books'] ?></td>
                 <td>
-                  <div class="cell-actions">
-                    <a href="edit.php?id=<?= $category['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>"
-                      class="btn btn-danger btn-sm"
-                      onclick="return confirm('Yakin ingin menghapus kategori ini?')">Hapus</a>
-                  </div>
-                </td>
-              </tr>
+              <div class="cell-actions">
+                <a href="edit.php?id=<?= $category['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
+                <a href="../../actions/categories/destroy.php?id=<?= $category['id'] ?>" class="btn btn-danger btn-sm"
+                onclick="return confirm('Yakin ingin menghapus kategori ini?')">Hapus</a>
+              </div>
+            </td>
+            </tr>
             <?php endforeach; ?>
           </tbody>
         </table>
