@@ -2,9 +2,11 @@
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  echo '<h2>Book deleted (simulation)</h2>';
+  echo '<h2>Book deleted.</h2>';
   echo '<p>Book with ID <p>' . htmlspecialchars($id) . '</p> was deleted successfully.</p>';
-} else {
+} 
+else 
+{
   echo '<p>
   Error: no book ID received.</p>';
 }

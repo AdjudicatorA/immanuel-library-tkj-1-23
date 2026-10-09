@@ -4,7 +4,9 @@ if (isset($_GET['id'])) {
   $id = $_GET['id'];
   echo '<h2>Category deleted.</h2>';
   echo '<p>Category with ID <p>' . htmlspecialchars($id) . '</p> was deleted successfully.</p>';
-} else {
+} 
+else 
+{
   echo '<p>
   Error: no category ID received.</p>';
 }

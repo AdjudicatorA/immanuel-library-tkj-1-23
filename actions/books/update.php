@@ -1,15 +1,17 @@
 <?php
 
-if (isset($_POST['id'], $_POST['title'], $_POST['isbn'], $_POST['year'], $_POST['stock'], $_POST['category_id'], $_POST['description'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   echo '<h2>Book updated.</h2>';
   echo '<pre>';
   print_r($_POST);
   echo '</pre>';
-} else {
+} 
+else 
+{
   echo '<p>
-  Error: incomplete data received.</p>';
+  Error: invalid request.</p>';
 }
 
 echo '<p>
-<a href="../../pages/books/index.php">&larr; Back to list</a>
+<a href="../../pages/books/index.php">&larr; Back</a>
 </p>';

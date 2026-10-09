@@ -1,15 +1,17 @@
 <?php
 
-if (isset($_POST['name'], $_POST['email'], $_POST['password'], $_POST['role'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
   echo '<h2>User added.</h2>';
   echo '<pre>';
   print_r($_POST);
   echo '</pre>';
-} else {
+} 
+else 
+{
   echo '<p>
-  Error: incomplete data received.</p>';
+  Error: invalid request.</p>';
 }
 
 echo '<p>
-<a href="../../pages/users/index.php">&larr; Back to list</a>
+<a href="../../pages/users/index.php">&larr; Back</a>
 </p>';
