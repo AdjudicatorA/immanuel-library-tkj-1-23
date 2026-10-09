@@ -71,11 +71,11 @@
             <div class="form-group">
               <label>Pilih Penulis (bisa lebih dari satu)</label>
               <div class="checkbox-grid">
-                <?php foreach ($authors as $index => $authorName): ?>
+                <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
-                    <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>
-                    <?= $author['name'] ?>
-                  </label>
+                  <input type="checkbox" name="author_ids[]" value="<?= $author['id'] ?>" <?= in_array($author['id'], $book['author_ids']) ? 'checked' : '' ?>>
+                  <?= $author['name'] ?>
+                </label>
                 <?php endforeach; ?>
               </div>
             </div>
