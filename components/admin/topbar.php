@@ -1,6 +1,3 @@
-<?php
-// awesome topbar
-?>
 <header class="app-topbar">
   <div class="page-title">
     <h1><?= $pageTitle ?></h1>

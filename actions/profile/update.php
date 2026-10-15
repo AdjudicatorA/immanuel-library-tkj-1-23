@@ -1,17 +1,12 @@
 <?php
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $bio = $_POST['bio'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-  echo '<h2>Profile updated.</h2>';
-  echo '<pre>';
-  print_r($_POST);
-  echo '</pre>';
-} 
-else 
-{
-  echo '<p>
-  Error: invalid request.</p>';
+    print_r($_POST);
 }
 
-echo '<p>
-<a href="../../pages/profile/edit.php">&larr; Back</a>
-</p>';
+?>

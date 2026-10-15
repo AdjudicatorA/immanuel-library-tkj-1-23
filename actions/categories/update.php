@@ -1,17 +1,10 @@
 <?php
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-  echo '<h2>Category updated.</h2>';
-  echo '<pre>';
-  print_r($_POST);
-  echo '</pre>';
-} 
-else 
-{
-  echo '<p>
-  Error: invalid request.</p>';
+    print_r($_POST);
 }
 
-echo '<p>
-<a href="../../pages/categories/index.php">&larr; Back</a>
-</p>';
+?>
