@@ -36,4 +36,7 @@
         <circle cx="12" cy="7.5" r="4" />
       </svg> Profil Saya</a>
   </nav>
+  <a onclick="return confirm('Apakah anda yakin logout?')" href="../../actions/auth/logout.php" 
+  style="border:1px solid white; text-align: center; display: block; margin-top: 10px">Logout
+  </a>
 </aside>
